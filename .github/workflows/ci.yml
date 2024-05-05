@@ -16,7 +16,8 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x, 20.x]
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        # FIXME: replace macos-12 with macos-latest when https://github.com/actions/setup-node/issues/1017 is resolved
+        os: [ubuntu-latest, windows-latest, macos-12]
     runs-on: ${{ matrix.os }}
     env:
       HUSKY: 0
